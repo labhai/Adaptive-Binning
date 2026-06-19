@@ -1,0 +1,32 @@
+dataset: HF
+data_root: data/raw
+output_dir: outputs/HF
+device: auto
+
+seed: 123456
+eval_seed: 0
+cat_threshold: 20
+
+dropout: 0.1
+pretrain_lr: 0.0001
+linear_lr: 0.01
+finetune_lr: 0.001
+weight_decay: 0.00001
+grad_clip: 100.0
+
+pretrain_epochs: 1000
+eval_epochs: 100
+run_finetune: false
+
+initial_bins: 2
+max_bins: 200
+patience: 5
+plateau_delta: 0.0001
+digs_threshold: 0.0001
+min_bin_size: 32
+sord_distance: squared
+
+loss_weights:
+  sord: 10.0
+  mse: 0.1
+  var: 0.001
